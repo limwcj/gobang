@@ -1,0 +1,41 @@
+{
+  "name": "gobang",
+  "version": "1.0.0",
+  "description": "gobang",
+  "private": true,
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "egg": "^2.2.1",
+    "egg-mysql": "^3.0.0",
+    "egg-redis": "^2.0.0",
+    "egg-scripts": "^2.5.0",
+    "egg-socket.io": "^4.0.8"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^6.0.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-gobang --workers=1",
+    "stop": "egg-scripts stop --title=egg-server-gobang",
+    "dev": "egg-bin dev"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "王成杰",
+  "license": "MIT"
+}

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>五子棋</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <link href="image/favicon.ico" rel="bookmark" type="image/x-icon">
+    <link href="image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=201810311712">
+    <link rel="stylesheet" type="text/css" href="js/login/login.css?v=2018201811091927">
+    <script src="js/lm.js?v=201810311712"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/socket.io.js"></script>
+</head>
+<body>
+<div id="game">
+    <canvas id="game-canvas" width="480px" height="800px">你的浏览器居然不支持Canvas？！赶快换一个吧！</canvas>
+    <div id="gamePanel"></div>
+    <div id="menu"><span id="login">登陆</span><span id="showRooms">房间列表</span></div>
+    <div id="rooms">
+        <div id="createRoom">创建房间</div>
+        <p>房间列表</p>
+        <div id="closeRooms">×</div>
+        <div id="roomsWrap" class="scroll"></div>
+    </div>
+    <div id="notice"></div>
+</div>
+<script src="js/login/login.js?v=201811121109"></script>
+<script src="js/index.js?v=201811121522"></script>
+</body>
+</html>

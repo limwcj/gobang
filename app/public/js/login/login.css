@@ -1,0 +1,177 @@
+@charset "UTF-8";
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.7;
+    z-index: 99;
+}
+input{
+    -webkit-appearance: none;
+}
+#login-wrap, #register-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 350px;
+    z-index: 100;
+    display: none;
+    margin-top: -200px;
+    margin-left: -150px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    background: #fff;
+    animation: login-show-animation 0.5s;
+}
+#register-wrap {
+    height: 410px;
+}
+@keyframes login-show-animation {
+    0% {opacity: 0; margin-top: -500px}
+    100% {opacity: 1; margin-top: -200px}
+}
+.login-wrap > div {
+    width: 100%;
+}
+.login-header {
+    height: 45px;
+}
+.login-header img{
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin-left: 10px;
+}
+.login-header-title {
+    display: block;
+    margin-left: 10px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    color: #666
+}
+.btn-loginclose {
+    display: block;
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 10px;
+    font-size: 30px;
+    color: #ccc;
+}
+.btn-loginclose:hover {
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+.login-tip {
+    visibility: hidden;
+    font-size: 12px;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+.login-body div {
+    position: relative;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-top: 20px !important;
+}
+.icon-login {
+    display: block;
+    width: 15px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+    float: left;
+}
+.icon-loginname {
+    background: url("icon.png") no-repeat 0 10px;
+}
+.icon-password {
+    background: url("icon.png") no-repeat -15px 10px;
+}
+.login-body input {
+    width: 78%;
+    height: 38px;
+    color: #666;
+    outline-style: none;
+    border: 1px solid #fff;
+    margin-left: 10px;
+}
+.btn-clear {
+    float: right;
+    margin-right: 5px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+}
+.btn-clear:hover {
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    vertical-align: middle;
+}
+#btn-loginsubmit, #btn-registersubmit{
+    display: block;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 40px !important;
+    background: #00CC33;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+#btn-loginsubmit:hover, #btn-registersubmit:hover {
+    background: #009933;
+    cursor: pointer;
+}
+.login-footer {
+    margin-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+.login-footer div {
+    text-align: right !important;
+    height: 15px;
+    font-size: 12px;
+    margin-top: 8px;
+    padding-right: 20px;
+    color: #00CC33;
+    cursor: pointer;
+}
+.login-footer a:hover {
+    text-decoration: underline;
+}
+#register-gender {
+    position: relative;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px !important;
+}
+#register-gender div {
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    float: left;
+    margin-left: 50px;
+}
+#login-loginname {
+    border: 1px solid #009933;
+}
