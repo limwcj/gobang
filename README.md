@@ -1,4 +1,4 @@
-# go bang
+# gobang
 
 [五子棋](http://gobang.liangmin.wang/public/index.html)
 
