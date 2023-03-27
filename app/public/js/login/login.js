@@ -1,11 +1,11 @@
 if (!window.lm) window.lm = {};
 (function () {
   var timer = null;
-  window.lm.login =  {
+  window.lm.login = {
     default: {
       loginBtn: '',
-      loginUrl: '/user/login',
-      registerUrl: '/user/register',
+      loginUrl: '/api/user/login',
+      registerUrl: '/api/user/register',
       cookieName: 'lm',
       cookieValidSeconds: 24 * 3600,
       loginCallback: function () {},
@@ -13,12 +13,12 @@ if (!window.lm) window.lm = {};
     },
     init: function (options) {
       var opts = $.extend({}, this.default, options);
-      var $loginBtn = $("#" + opts.loginBtn);
+      var $loginBtn = $('#' + opts.loginBtn);
       if (!($loginBtn instanceof jQuery)) throw new Error('loginBtn is necessary');
       if (!$loginBtn.length) {
         $(`<div id="${opts.loginBtn}" style="display: none;">`).appendTo('body');
       }
-      $("#" + opts.loginBtn).on('click', function () {
+      $('#' + opts.loginBtn).on('click', function () {
         if (getCookie(opts.cookieName)) {
           opts.loginCallback();
         } else {
@@ -30,12 +30,14 @@ if (!window.lm) window.lm = {};
           $('body').css('overflowY', 'hidden');
           $('.login-tip').css('visibility', 'hidden');
         }
-        $('.login-body input').on('focus', function () {
-          $('.login-body div').css('border', '1px solid #e0e0e0');
-          $(this).parent().css('border', '1px solid #009933');
-        }).on('blur', function () {
-          $('.login-body div').css('border', '1px solid #e0e0e0');
-        });
+        $('.login-body input')
+          .on('focus', function () {
+            $('.login-body div').css('border', '1px solid #e0e0e0');
+            $(this).parent().css('border', '1px solid #009933');
+          })
+          .on('blur', function () {
+            $('.login-body div').css('border', '1px solid #e0e0e0');
+          });
         $('.btn-clear').on('click', function () {
           $(this).parent().find('input').val('').focus();
         });
@@ -59,17 +61,20 @@ if (!window.lm) window.lm = {};
             $('#btn-loginsubmit').click();
           }
         });
-        $('#register-loginname input, #register-password input, #register-password-again input').on('keydown', function (e) {
-          if (e.keyCode == 13) {
-            $('#btn-registersubmit').click();
+        $('#register-loginname input, #register-password input, #register-password-again input').on(
+          'keydown',
+          function (e) {
+            if (e.keyCode == 13) {
+              $('#btn-registersubmit').click();
+            }
           }
-        });
+        );
         $('#btn-loginsubmit').on('click', function () {
           var loginName = $.trim($('#login-loginname input').val()),
             password = $.trim($('#login-password input').val());
           var params = {
             username: loginName,
-            password: password
+            password: password,
           };
           if (!loginName) {
             showError('用户名不能为空！');
@@ -99,7 +104,7 @@ if (!window.lm) window.lm = {};
           }
           var params = {
             username: loginName,
-            password: password
+            password: password,
           };
           $.ajax({
             url: opts.registerUrl,
@@ -112,7 +117,7 @@ if (!window.lm) window.lm = {};
               } else {
                 showError(data.message);
               }
-            }
+            },
           });
         });
       });
@@ -135,7 +140,7 @@ if (!window.lm) window.lm = {};
             } else {
               showError(data.message);
             }
-          }
+          },
         });
       }
 
@@ -206,12 +211,12 @@ if (!window.lm) window.lm = {};
       }
 
       function getCookie(name) {
-        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-        if (arr = document.cookie.match(reg))
-          return unescape(arr[2]);
-        else
-          return null;
+        var arr,
+          reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
+        if ((arr = document.cookie.match(reg))) return unescape(arr[2]);
+        else return null;
       }
-    }
+    },
   };
 })();
+

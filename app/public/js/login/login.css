@@ -107,6 +107,9 @@ input{
     border: 1px solid #fff;
     margin-left: 10px;
 }
+.login-body input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
 .btn-clear {
     float: right;
     margin-right: 5px;

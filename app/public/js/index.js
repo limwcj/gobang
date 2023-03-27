@@ -477,7 +477,7 @@
 
     window.getUser = function (callback) {
       $.ajax({
-        url: '/user/getUser',
+        url: '/api/user/getUser',
         type: 'post',
         dataType: 'json',
         success: function (data) {
@@ -493,7 +493,7 @@
 
   function logout() {
     $.ajax({
-      url: '/user/logout',
+      url: '/api/user/logout',
       type: 'post',
       dataType: 'json',
       success: function (data) {

@@ -5,7 +5,7 @@ module.exports = appInfo => {
   return {
     cluster: {
       listen: {
-        port: 5211
+        port: 9997
       }
     },
     keys: appInfo.name + "_test",
@@ -33,7 +33,7 @@ module.exports = appInfo => {
         host: "localhost",
         port: "3306",
         user: "root",
-        password: "Lim@1111",
+        password: "password",
         supportBigNumbers: true
       }
     },
@@ -46,7 +46,7 @@ module.exports = appInfo => {
       client: {
         host: "localhost",
         port: 6379,
-        password: "926425",
+        password: "password",
         db: 0
       }
     },

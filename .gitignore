@@ -1,1 +1,7 @@
 node_modules
+.idea
+.history
+logs/*
+run
+config/config.default.js
+
